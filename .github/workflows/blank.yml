@@ -2,17 +2,17 @@
 
 name: Generic Segmentree CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  
+
 defaults:
   run:
     shell: bash
@@ -28,6 +28,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      # Compile the project
+      - name: Build the project
+        run: |
+          make
 
       # Runs a set of commands using the runners shell
       - name: Run tests pipeline
