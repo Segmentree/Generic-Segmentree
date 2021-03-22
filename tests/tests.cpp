@@ -9,5 +9,6 @@ TEST_CASE("Factorials are computed", "[factorial]")
   REQUIRE(Factorial(2) == 2);
   REQUIRE(Factorial(3) == 6);
   REQUIRE(Factorial(4) == 24);
+  REQUIRE(Factorial(5) == 120);
   REQUIRE(Factorial(10) == 3628800);
 }
